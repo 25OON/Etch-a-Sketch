@@ -39,7 +39,5 @@ function changeColor(choice){
 }
 //reset board
 function clearBoard(){
-    let board = document.querySelector(".board");
-    let squares = board.querySelectorAll("div");
-    squares.forEach((div) => div.remove());
+    populateBoard(16);
 }
