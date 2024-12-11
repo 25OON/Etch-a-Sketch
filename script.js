@@ -49,6 +49,14 @@ function clearBoard() {
     });
 }
 //click to color
-document.querySelector("body").addEventListener('click', () => {
+document.querySelector(".board").addEventListener('click', () => {
     click = !click;
+    if(click){
+        document.querySelector(".mode").textContent = "Coloring: On";
+    }
+    else{
+        document.querySelector(".mode").textContent ="Coloring: Off";
+    }
 });
+
+//
