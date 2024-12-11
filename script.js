@@ -17,7 +17,7 @@ function populateBoard(size){
 }
 //generate grid size by input
 function changeSize(input){
-    if(input >=2 || input <= 100){
+    if(input >=2 && input <= 100){
         populateBoard(input)
     }
     else{
@@ -25,9 +25,9 @@ function changeSize(input){
     }
 }
 function colorSquare(){
+    if(color === 'rainbow'){
     //this object = square
-    if(color = 'random'){
-    this.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; //rainbow
     }
     else{
     this.style.backgroundColor = color;
@@ -36,4 +36,10 @@ function colorSquare(){
 //for button 
 function changeColor(choice){
     color = choice;
+}
+//reset board
+function clearBoard(){
+    let board = document.querySelector(".board");
+    let squares = board.querySelectorAll("div");
+    squares.forEach((div) => div.remove());
 }
