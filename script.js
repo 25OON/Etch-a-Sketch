@@ -24,9 +24,14 @@ function changeSize(input){
         console.log("Too many squares");
     }
 }
-
 function colorSquare(){
-    this.style.backgroundColor = color //this = square (object)
+    //this object = square
+    if(color = 'random'){
+    this.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    }
+    else{
+    this.style.backgroundColor = color;
+    }
 }
 //for button 
 function changeColor(choice){
