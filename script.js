@@ -38,6 +38,10 @@ function changeColor(choice){
     color = choice;
 }
 //reset board
-function clearBoard(){
-    populateBoard(16);
+function clearBoard() {
+    let board = document.querySelector(".board");
+    let squares = board.querySelectorAll("div");
+    squares.forEach((square) => {
+        square.style.backgroundColor = "white"; // Reset background color
+    });
 }
