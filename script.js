@@ -1,22 +1,20 @@
+//create size x size board    
 function populateBoard(size){
-//create sizexsize grid    
-let board = document.querySelector(".board");
-let squares = board.querySelectorAll("div");
-squares.forEach((div) => div.remove()); //remove the existing before create a new one
-board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-
-let amount = size*size;
-for(let i=0; i < amount; i++){
+    let board = document.querySelector(".board");
+    let squares = board.querySelectorAll("div");
+    squares.forEach((div) => div.remove());
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    
+    let amount = size*size;
+    for(let i=0; i < amount; i++){
     let square = document.createElement("div");
-    square.addEventListener("mouseover",() => {
-        square.style.backgroundColor = "black";
-    })
-    square.style.backgroundColor = "blue";
+    square.addEventListener("mouseover", colorSquare)
+    square.style.backgroundColor = "gray";
     board.insertAdjacentElement("beforeend", square);
 }
 }
-
+//generate grid size by input
 function changeSize(input){
     if(input >=2 || input <= 100){
         populateBoard(input)
@@ -24,4 +22,8 @@ function changeSize(input){
     else{
         console.log("Too many squares");
     }
+}
+
+function colorSquare(){
+    this.style.backgroundColor = "black" //this = square (object)
 }
