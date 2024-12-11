@@ -12,10 +12,10 @@
         <div class="content">
             <div class="board"></div>
             <div class="button">
-                <button>Black</button>
-                <button>White</button>
+                <button onclick="changeColor('black')">Write</button>
+                <button onclick="changeColor('white')">Eraser</button>
                 <button>Random</button>
-                <button>Reset</button>
+                <button>Clear</button>
             </div>
             <div>
                 <input type="text" placeholder="Size of board" value="16" onchange="changeSize(this.value)"> <!--Trigger event-->
