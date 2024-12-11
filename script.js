@@ -1,4 +1,5 @@
 let color = 'black';
+let click = true;
 //create size x size board    
 function populateBoard(size){
     let board = document.querySelector(".board");
@@ -25,12 +26,14 @@ function changeSize(input){
     }
 }
 function colorSquare(){
-    if(color === 'rainbow'){
-    //this object = square
-    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; //rainbow
-    }
-    else{
-    this.style.backgroundColor = color;
+    if(click){
+        if(color === 'rainbow'){
+        //this object = square
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; //rainbow
+        }
+        else{
+        this.style.backgroundColor = color;
+        }
     }
 }
 //for button 
@@ -45,3 +48,7 @@ function clearBoard() {
         square.style.backgroundColor = "white"; // Reset background color
     });
 }
+//click to color
+document.querySelector("body").addEventListener('click', () => {
+    click = !click;
+});
